@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Background Color Changer</title>
+  <style>
+    body {
+      transition: background-color 1s ease;
+      font-family: Arial, sans-serif;
+      text-align: center;
+      margin-top: 100px;
+    }
+
+    h1 {
+      color: white;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Background color changes every 10 seconds</h1>
+
+  <script>
+    // List of colors to cycle through
+    const colors = ['#3498db', '#e74c3c', '#2ecc71', '#f1c40f', '#9b59b6', '#1abc9c'];
+
+    let index = 0;
+
+    function changeBackgroundColor() {
+      // Change body background color
+      document.body.style.backgroundColor = colors[index];
+
+      // Move to the next color
+      index = (index + 1) % colors.length;
+    }
+
+    // Change color immediately on load
+    changeBackgroundColor();
+
+    // Change every 10 seconds (10000 milliseconds)
+    setInterval(changeBackgroundColor, 10000);
+  </script>
+
+</body>
+</html>
